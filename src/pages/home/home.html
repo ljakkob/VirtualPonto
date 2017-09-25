@@ -1,32 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Ponto Virtual</ion-title>
+  <ion-navbar align-title="center">
+    <ion-title align-title="center">Ponto Virtual</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <h2>Bom Trabalho!</h2>
 
-  <ion-list>
-      <ion-item>
-          <ion-label color="primary">Entrada</ion-label>
-          <ion-input placeholder="Text Input"></ion-input>
-        </ion-item>
 
-        <ion-item>
-            <ion-label color="primary">Saida Almoço</ion-label>
-            <ion-input placeholder="Text Input"></ion-input>
-          </ion-item>
-
-          <ion-item>
-              <ion-label color="primary">Retorno Almoço</ion-label>
-              <ion-input placeholder="Text Input"></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-label color="primary">Saída</ion-label>
-                <ion-input placeholder="Text Input"></ion-input>
-              </ion-item>
+  <ion-list no-lines>
+    <button ion-item *ngFor="let user of users | async" (click)="onChatCreate(user)">{{user.name}}</button>
 
   </ion-list>
+
+  <button ion-button block (click)="onSignUp()">Sign UP</button>
+
 </ion-content>
