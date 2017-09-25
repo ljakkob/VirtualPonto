@@ -1,3 +1,4 @@
+import { AuthService } from './../providers/auth.service';
 import { SignUpPage } from './../pages/sign-up/sign-up';
 import { LoginPage } from './../pages/login/login';
 import { CadastroPage } from './../pages/cadastro/cadastro';
@@ -59,7 +60,8 @@ const firebaseAppConfig: FirebaseAppConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserService
+    UserService,
+    AuthService
   ]
 })
 export class AppModule {}
