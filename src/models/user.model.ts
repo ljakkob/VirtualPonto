@@ -1,9 +1,10 @@
-export class User {
+export class User {  password: any;
+
 
     constructor(
         public name: string,
         public username: string,
         public email: string,
-        public password: string,
+        public uid: string,
     ){}
 }
