@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Sign Up</ion-title>
+    <ion-title>Cadastro</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,19 +15,55 @@
 
 <ion-content padding>
 <h1 text-center>
-  <ion-icon class="auth-icon" name="person-add" color="primary"></ion-icon>
+  <ion-icon class="auth-icon" name="clock" color="primary"></ion-icon>
 </h1>
 
 <form [formGroup]="signupForm"(ngSubmit)="onSubmit(); $event.preventDefault()" >
   <ion-item >
-    <ion-icon name="person" item-left></ion-icon>
-    <ion-input type="text" placeholder="Name" formControlName="name" > </ion-input>
+    <ion-icon name="clock" item-left></ion-icon>
+    <ion-input type="text" placeholder="00" formControlName="horaEntrada"></ion-input>
   </ion-item>
 
   <ion-item >
-    <ion-icon name="at" item-left></ion-icon>
-    <ion-input type="text" placeholder="Username" formControlName="username" > </ion-input>
-  </ion-item>
+      <ion-icon name="clock" item-left></ion-icon>
+      <ion-input type="text" placeholder="00" formControlName="minEntrada"></ion-input>
+    </ion-item>
+
+    <ion-item >
+        <ion-icon name="clock" item-left></ion-icon>
+        <ion-input type="text" placeholder="00" formControlName="horaSaidaAlmoco"></ion-input>
+      </ion-item>
+
+      <ion-item >
+          <ion-icon name="clock" item-left></ion-icon>
+          <ion-input type="text" placeholder="00" formControlName="minSaidaAlmoco"></ion-input>
+        </ion-item>
+        
+        <ion-item >
+            <ion-icon name="clock" item-left></ion-icon>
+            <ion-input type="text" placeholder="00" formControlName="horaRetornoAlmoco"></ion-input>
+          </ion-item>
+    
+          <ion-item >
+              <ion-icon name="clock" item-left></ion-icon>
+              <ion-input type="text" placeholder="00" formControlName="minRetornoAlmoco"></ion-input>
+            </ion-item>
+
+            <ion-item >
+                <ion-icon name="clock" item-left></ion-icon>
+                <ion-input type="text" placeholder="00" formControlName="horaSaida"></ion-input>
+              </ion-item>
+
+              <ion-item >
+                  <ion-icon name="clock" item-left></ion-icon>
+                  <ion-input type="text" placeholder="00" formControlName="minSaida"></ion-input>
+                </ion-item>
+
+  <br><br><br>
+  <ion-item >
+      <ion-icon name="at" item-left></ion-icon>
+      <ion-input type="text" placeholder="Username" formControlName="username" > </ion-input>
+    </ion-item>
 
   <ion-item >
     <ion-icon name="mail" item-left></ion-icon>
@@ -36,7 +72,7 @@
 
   <ion-item >
     <ion-icon name="lock" item-left></ion-icon>
-    <ion-input type="text" placeholder="Password" formControlName="password" > </ion-input>
+    <ion-input type="password" placeholder="Senha" formControlName="password" > </ion-input>
   </ion-item>
 
  <br>

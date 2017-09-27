@@ -9,8 +9,7 @@
 
 
   <ion-list no-lines>
-    <button ion-item *ngFor="let user of users | async" (click)="onChatCreate(user)">{{user.name}}</button>
-
+    <button ion-item *ngFor="let user of users | async" (click)="onChatCreate(user)">{{user.username}}</button>
   </ion-list>
 
   <button ion-button block (click)="onSignUp()">Sign UP</button>

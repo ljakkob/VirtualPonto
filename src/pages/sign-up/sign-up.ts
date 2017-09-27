@@ -32,8 +32,15 @@ export class SignUpPage {
 
     this.signupForm = this.formBuilder.group({
 
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      username: ['', [Validators.required, Validators.minLength(3)]],
+      horaEntrada: ['', [Validators.required, Validators.maxLength(2)]],
+      minEntrada: ['', [Validators.required, Validators.maxLength(2)]],
+      horaSaidaAlmoco:['', [Validators.required, Validators.maxLength(2)]],
+      minSaidaAlmoco:['', [Validators.required, Validators.maxLength(2)]],
+      horaRetornoAlmoco:['', [Validators.required, Validators.maxLength(2)]],
+      minRetornoAlmoco:['', [Validators.required, Validators.maxLength(2)]],
+      horaSaida:['', [Validators.required, Validators.maxLength(2)]],
+      minSaida:['', [Validators.required, Validators.maxLength(2)]],
+      username:['', [Validators.required, Validators.maxLength(3)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       email: ['', Validators.compose([Validators.required, Validators.pattern(emailRegex)])],
     }
