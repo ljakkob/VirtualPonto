@@ -1,76 +1,81 @@
-<ion-header>
+<!--
+  Generated template for the CadastroPage page.
 
-  <ion-navbar>
-    <ion-title>Cadastro</ion-title>
-  </ion-navbar>
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 
-</ion-header>
-
-
-<ion-content padding>
-
-
-  <form>
-    <ion-grid>
-      <ion-row>
-        <ion-title>Entrada </ion-title>
-        <ion-col>
-          <ion-input type="text" placeholder="00">:</ion-input> 
-        </ion-col>
-        <ion-col>
-          <ion-input type="text" placeholder="00"></ion-input>
-        </ion-col>
-        <ion-col>
-          <button ion-button full>Bater Ponto</button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-    <ion-grid>
-        <ion-row>
-          <ion-title> Saida intervalo </ion-title>
-          <ion-col>
-            <ion-input type="text" placeholder="00">":"</ion-input>
-          </ion-col>
-          <ion-col>
-            <ion-input type="text" placeholder="00"></ion-input>
-          </ion-col>
-          <ion-col>
-            <button ion-button full>Bater Ponto</button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-      <ion-grid>
-          <ion-row>
-            <ion-title> Retorno intervalo </ion-title>
-            <ion-col>
-              <ion-input type="text" placeholder="00">":"</ion-input>
-            </ion-col>
-            <ion-col>
-              <ion-input type="text" placeholder="00"></ion-input>
-            </ion-col>
-            <ion-col>
-              <button ion-button full>Bater Ponto</button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-        
-        <ion-grid>
+<ion-content>
+  <div class="wrapper">
+    <div>
+      <ion-card padding>
+        <div text-center>
+          <h2>Informe os dados solicitados</h2>
+        </div>
+        <form [formGroup]="registerForm">
+          <ion-grid>
             <ion-row>
-              <ion-title> Saida </ion-title>
               <ion-col>
-                <ion-input type="text" placeholder="00">":"</ion-input>
+                <ion-input formControlName="completeName" type="text" placeholder="Nome Completo"></ion-input>
+
+                <p class="text-invalid" *ngIf="registerForm.get('completeName').hasError('required') && submitted">Este Campo é obrigatorio.</p>
+
               </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid>
+            <ion-row>
               <ion-col>
-                <ion-input type="text" placeholder="00"></ion-input>
+                <ion-input type="email" autocapitalize="off" formControlName="email" placeholder="Email"></ion-input>
+                <p class="text-invalid" *ngIf="registerForm.get('email').hasError('required') && submitted">Este Campo é obrigatorio.</p>
+                <p class="text-invalid" *ngIf="registerForm.get('email').invalid && !registerForm.get('email').hasError('required') && submitted">Informe um email valido</p>
               </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid>
+            <ion-row>
               <ion-col>
-                <button ion-button full>Bater Ponto</button>
+                <ion-input type="text" autocapitalize="off" formControlName="login" placeholder="Login"></ion-input>
+                <p class="text-invalid" *ngIf="registerForm.get('login').hasError('required') && submitted">Este Campo é obrigatorio.</p>
+                <p class="text-invalid" *ngIf="registerForm.get('login').hasError('exists')">Login já cadastrado</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-input type="password" formControlName="password" placeholder="Senha"></ion-input>
+                <p class="text-invalid" *ngIf="registerForm.get('password').hasError('required') && submitted">Este Campo é obrigatorio.</p>
+                <p class="text-invalid" *ngIf="registerForm.get('password').invalid && !registerForm.get('password').hasError('required') && submitted">A senha deve possuir no minimo 6 caracteres</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-input type="password" formControlName="confirmation" placeholder="Confirme a senha"></ion-input>
+                <p class="text-invalid" *ngIf="registerForm.get('confirmation').hasError('required') && submitted">Este Campo é obrigatorio.</p>
+                <p class="text-invalid" *ngIf="registerForm.get('confirmation').invalid && !registerForm.get('confirmation').hasError('required') && submitted">Senhas digitadas não conferem.</p>
               </ion-col>
             </ion-row>
           </ion-grid>
 
 
-  </form>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <button (click)="register()" ion-button color="secondary" block>Cadastrar</button>
+                <button (click)="goBack()" ion-button clear block color="primary">Voltar</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+
+      </ion-card>
+    </div>
+  </div>
 </ion-content>

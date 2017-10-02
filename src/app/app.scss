@@ -14,6 +14,25 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-.auth-icon{
-    font-size: 7.0em;
+ion-content{
+  background-image: url('../assets/img/fingerprint.png') !important;
+  background-position: center !important;
+  background-repeat: no-repeat;
 }
+
+//@todo: Remove after Issue ionic-team/ionic#11640 is fixed
+.card-md .item-md.item-block:not(:last-child) .item-inner {
+    border-bottom: 1px solid #dedede;
+  }
+  
+  .card-md .item-md.item-block:not(.item-input):not(.item-select):not(.item-radio):not(.item-checkbox) .item-inner {
+    border: 0;
+  }
+
+.text-invalid{
+  color:color($colors,danger,base)!important;
+}
+  @font-face{
+        font-family: Wendy One;
+        src: url('../assets/fonts/wendyOne.woff2') format('woff2');
+        }

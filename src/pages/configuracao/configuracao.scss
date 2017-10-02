@@ -1,0 +1,39 @@
+page-configuracao {
+
+    ion-list-header{
+        background-color: color($colors,secondary,base)!important;
+        font-size: 1.3em  !important;
+    }
+    ion-list-header ion-label{
+        color: color($colors,secondary,contrast) !important;
+    }
+
+    .card-input{
+        border-top: 1px solid transparentize( color($colors,secondaryLight,base),.9);
+    }
+
+    ion-datetime{
+        min-width: 40%;
+        background-color:transparentize(color($colors,light,base),.8);
+        border: 1px solid transparentize(color($colors,light,base),.7);
+
+       text-align: center;
+    }
+    ion-input{
+        background-color:transparentize(color($colors,light,base),.8);
+        border: 1px solid transparentize(color($colors,light,base),.7);      
+        
+    }
+
+    .text-input-md{
+        text-align: center;
+    }
+    .item-input ion-label{
+        flex: auto;
+        max-width: 240px;
+    }
+
+    ion-label{
+        color: #212121 !important;
+    }
+}

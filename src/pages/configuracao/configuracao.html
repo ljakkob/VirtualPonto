@@ -1,0 +1,165 @@
+<!--
+  Generated template for the ConfiguracaoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Configuração</ion-title>
+
+    <ion-buttons end>
+      <button icon-only ion-button (click)="saveConfig()">
+              <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card class="form-card">
+    <form [formGroup]="configForm">
+      <ion-list class="list-form">
+        <ion-list-header>Configuração de Periodo</ion-list-header>
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label style="font-weight: bold">Total de Expediente</ion-label>
+                <ion-datetime formControlName="workDayTime" displayFormat="HH:mm" pickerFormat="HH:mm" placeholder="00:00"></ion-datetime>
+              </ion-item>
+              <p padding-left class="text-invalid" *ngIf="configForm.get('workDayTime').hasError('required') && submitted">Preencha este Campo</p>              
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-item-divider></ion-item-divider>
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label>Horario de Entrada</ion-label>
+                <ion-datetime formControlName="startTime" displayFormat="HH:mm" pickerFormat="HH:mm" placeholder="00:00"></ion-datetime>
+              </ion-item>
+              <p padding-left class="text-invalid" *ngIf="configForm.get('startTime').hasError('required') && submitted">Preencha este Campo</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label>Horario de Intervalo</ion-label>
+                <ion-datetime formControlName="intervalTime" displayFormat="HH:mm" pickerFormat="HH:mm" placeholder="00:00"></ion-datetime>
+              </ion-item>
+              <p padding-left class="text-invalid" *ngIf="configForm.get('intervalTime').hasError('required') && submitted">Preencha este Campo</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label>Horario de Retorno</ion-label>
+                <ion-datetime formControlName="returnTime" displayFormat="HH:mm" pickerFormat="HH:mm" placeholder="00:00"></ion-datetime>
+              </ion-item>
+              <p padding-left class="text-invalid" *ngIf="configForm.get('returnTime').hasError('required') && submitted">Preencha este Campo</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label>Horario de Saida</ion-label>
+                <ion-datetime formControlName="endTime" displayFormat="HH:mm" pickerFormat="HH:mm" placeholder="00:00"></ion-datetime>
+              </ion-item>
+              <p padding-left class="text-invalid" *ngIf="configForm.get('endTime').hasError('required') && submitted">Preencha este Campo</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-list-header>Configuração de Alarme</ion-list-header>
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label>Na Entrada</ion-label>
+                <ion-toggle formControlName="startAlarm" color="secondary"></ion-toggle>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label>No Intervalo</ion-label>
+                <ion-toggle formControlName="intervalAlarm" color="secondary"></ion-toggle>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label>No Retorno</ion-label>
+                <ion-toggle formControlName="returnAlarm" color="secondary"></ion-toggle>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label>Na Saida</ion-label>
+                <ion-toggle formControlName="endAlarm" color="secondary"></ion-toggle>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <ion-label>Antecipar alarme em (minutos):</ion-label>
+                <ion-input placeholder="0" formControlName="alarmeAntecipatedIn" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+        <ion-grid class="card-input">
+          <ion-row>
+            <ion-col col-12>
+              <ion-item>
+                <button (click)="saveConfig()" ion-button color="primary" block large>Salvar</button>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-list>
+    </form>
+  </ion-card>
+
+</ion-content>

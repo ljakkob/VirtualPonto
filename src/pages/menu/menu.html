@@ -1,0 +1,87 @@
+<!--
+  Generated template for the MenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+
+  <div class="top-panel">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2>
+          <button (click)="logOut()" color="dark" block ion-button icon-only>
+                <ion-icon name="log-out"></ion-icon>
+              </button>
+        </ion-col>
+        <ion-col col-12>
+          <h1 class="top-panel-title">Virtual Ponto</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="content-page">
+    <ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button (click)="registerPoint()" class="menu-button" ion-button color="light" icon-left block>
+            <ion-icon name="alarm"></ion-icon>
+            Bater Ponto
+          </button>
+          </ion-col>
+
+          <ion-col col-6>
+            <button (click)="goToBancoHoras()" class="menu-button" ion-button color="secondaryLight" icon-left block>
+              <ion-icon name="calculator"></ion-icon>
+            Banco de Horas
+          </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button (click)="goToFolhaPonto()" class="menu-button" ion-button color="secondaryLight" icon-left block>
+                <ion-icon name="calendar"></ion-icon>
+              Folha de Ponto
+            </button>
+          </ion-col>
+
+          <ion-col col-6>
+            <button (click)="goToConfiguracao()" class="menu-button" ion-button color="secondaryLight" icon-left block>
+                <ion-icon name="settings"></ion-icon>
+              Configurações
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <div class="footer-details">
+              <h4>Bem Vindo <b style="text-transform: capitalize">{{loggedName}}</b>, Hoje é:</h4>
+              <span class="destak">{{weekDay}} , {{today}}</span>
+
+              <ul>
+                <li>
+                  <p>Ultimo registro:</p>
+                  <span *ngIf="todayRegister">{{todayRegister.status}} <b>{{todayRegister.referenceDate.toLocaleTimeString()}}</b></span>
+                  <span *ngIf="!todayRegister">Nenhum registro hoje</span>
+                </li>
+              </ul>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </ion-card>
+  </div>
+
+</ion-content>

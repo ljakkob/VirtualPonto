@@ -1,0 +1,63 @@
+page-banco-horas {
+
+    .form-card{
+        background-color: color($colors,secondaryLight,base);
+        //border-radius: 10px;
+    }
+
+    ion-select{
+        max-width: 100%;
+    }
+
+    .form-card-label{
+        font-size: 1.2em;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        color: color($colors,primary,contrast);
+    }
+
+    .item-datetime{
+        border-radius: 5px;
+    }
+    .table-card{
+        //border-radius: 10px;
+    }
+    .table-card-title{
+    
+    }
+
+    .table-card-title p{
+        font-weight: 800;
+    }
+
+    .table-card-header{
+        border: 1px solid color($colors,secondary,base);
+        background-color: transparentize(color($colors,secondaryLight),.2);
+        padding: 5px;
+
+    }
+
+    .table-card-header p{
+        font-weight: 500;
+        color: color($colors,primary,contrast);
+    }
+
+    .table-card-data{
+        border-bottom: 1px solid color($colors,secondary,base);
+    }
+
+    .table-card-footer{
+        background-color: transparentize(color($colors,secondaryLight,base),.2);
+    }
+
+    .table-card-footer-data p{
+        font-weight: bold;
+        font-size: 1.2em;
+        color: color($colors,primary,contrast);
+    }
+
+    .bt-back{
+        padding: 20px;
+    }
+}

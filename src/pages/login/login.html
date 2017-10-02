@@ -4,15 +4,57 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
 
-  <ion-navbar>
-    <ion-title>login</ion-title>
-  </ion-navbar>
+<ion-content class="background-content">
+  <div class="wrapper">
+    <div>
+      <ion-card>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12 text-center>
+              <h1>Virtual Ponto</h1>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <form [formGroup]="loginForm">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12>
+                <ion-input type="text" autocapitalize="off" formControlName="login" placeholder="Login"></ion-input>
+                <p class="text-invalid" *ngIf="loginForm.get('login').hasError('required') && submitted">Preencha este campo</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
 
-</ion-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12>
+                <ion-input type="password" formControlName="password" placeholder="Senha"></ion-input>
+                <p class="text-invalid" *ngIf="loginForm.get('password').hasError('required') && submitted">Preencha este campo</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
 
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12 text-center>
+                <button (click)="doLogin()" ion-button color="secondary">Entrar</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12>
+              <div text-center style="width: 100%">
+                <button (click)="toCadastro()" ion-button clear block>Cadastre-se Agora!</button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
-<ion-content padding>
+      </ion-card>
+    </div>
+  </div>
 
 </ion-content>

@@ -1,0 +1,58 @@
+page-folha-ponto {
+
+    .header-panel{
+        display: block;
+        background: color($colors,secondary,base);
+    }
+
+    .header-panel h3{
+        font-size: 1.5em;
+        text-align: center;
+        font-weight: bold;
+        width: 100%;
+        color: color($colors,primary,contrast);
+    }
+
+    
+    .header-panel p{
+        font-size: 1.2em;
+        font-weight: 500;
+        width: 100%;
+        color: color($colors,primary,contrast);
+    }
+
+    .select-mes{
+        background-color: #FFF !important; 
+        
+    }
+
+    .select-mes ion-select{
+        max-width: 100%;
+    }
+
+    .content-panel{
+        padding: 0px !important;
+    }
+    
+    .table-header{
+        padding: 10px;
+        border: 1px solid color($colors,secondary,base);
+        text-align: center;
+        background-color: transparentize(color($colors,secondaryLight,base),.2);
+        color:color($colors,primary,contrast);
+        font-weight: bold;
+
+    }
+
+    .table-row-data{
+        border-bottom: 1px solid color($colors,secondary,base);
+    }
+
+    .table-data{
+        padding: 5px;
+    }
+
+    .table-row-data:hover{
+        background: transparentize(color($colors,light,base),.7);
+    }
+}

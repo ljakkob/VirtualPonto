@@ -1,0 +1,82 @@
+<!--
+  Generated template for the FolhaPontoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Folha de ponto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card padding class="header-panel">
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-8>
+          <div class="select-mes">
+            <ion-select [(ngModel)]="actualMonth" placeholder="Mes de Referencia">
+              <ion-option *ngFor="let month of monthsList" [selected]="actualMonth == month" value="{{month}}">{{month}}</ion-option>
+            </ion-select>
+          </div>
+        </ion-col>
+
+        <ion-col col-3>
+          <button (click)="updateDataInfo()" ion-button block icon-only color="light">
+            <ion-icon name="search"></ion-icon>
+          </button>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+
+  <ion-card class="content-panel">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="table-header">Data</ion-col>
+        <ion-col class="table-header">Entrada</ion-col>
+        <ion-col class="table-header">Interv</ion-col>
+        <ion-col class="table-header">Retorno</ion-col>
+        <ion-col class="table-header">Saida</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid padding-bottom *ngIf="registers">
+      <ion-row class="table-row-data" *ngFor="let point of registers">
+        <ion-col text-center class="table-data">{{point.datePointString}}</ion-col>
+        <ion-col text-center class="table-data">
+          {{ point.startTime ? ("00"+point.startTime.getHours()).slice(-2)+":"+("00"+point.startTime.getMinutes()).slice(-2): '---'
+          }}
+        </ion-col>
+        <ion-col text-center class="table-data">
+          {{point.intervalTime ? ("00"+point.intervalTime.getHours()).slice(-2)+":"+("00"+point.intervalTime.getMinutes()).slice(-2):
+          '---' }}
+        </ion-col>
+        <ion-col text-center class="table-data">
+          {{point.returnTime ? ("00"+point.returnTime.getHours()).slice(-2)+":"+("00"+point.returnTime.getMinutes()).slice(-2): '---'
+          }}
+        </ion-col>
+        <ion-col text-center class="table-data">
+          {{point.endTime ? ("00"+point.endTime.getHours()).slice(-2)+":"+("00"+point.endTime.getMinutes()).slice(-2): '---' }}
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="table-row-data" *ngIf="registers.length === 0">
+        <ion-col col-12 text-center>
+          <p>Nenhum registro ainda este mês.</p>
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-card>
+
+</ion-content>

@@ -1,3 +1,38 @@
 page-login {
 
+    .background-content{
+        background-image: url('../assets/img/fingerprint.png') !important;
+        background-position: center !important;
+        background-repeat: no-repeat;
+    }
+
+    html,body{
+        height: 100%;
+        min-height: 100%;
+    }
+
+    .wrapper{
+        height: 100% !important;
+        min-height: 100% !important;
+        display: -webkit-flex !important;
+        display: flex !important;
+        -webkit-align-items: center !important;
+        align-items: center !important;
+        -webkit-justify-content: center !important;
+        justify-content: center !important;
+    }
+
+    .wrapper div{
+        width: 80%;
+    }
+
+    h1{
+        font-family: "Wendy One";
+        font-size: 1.9em !important;
+    }
+
+    ion-input{
+        background: transparentize(color($colors,light,base),.8);
+        border-radius: 3px;
+    }
 }
